@@ -19,31 +19,40 @@ namespace Ejercicio_Nro_8
             int cantidadDeHorasTrabajadas;
             double bruto;
             double neto;
+            char continuar = 's';
 
-            Console.WriteLine("Ingrese el valor de la hora");
-            valorHora = double.Parse(Console.ReadLine());
-            Console.WriteLine("Ingrese el nombre");
-            nombre = Console.ReadLine();
-            Console.WriteLine("Antiguedad");
-            antiguedad = int.Parse(Console.ReadLine());
-            Console.WriteLine("Horas trabajadas");
-            cantidadDeHorasTrabajadas = int.Parse(Console.ReadLine());
+            while (continuar=='s')
+            {
+                Console.WriteLine("Ingrese el valor de la hora");
+                valorHora = double.Parse(Console.ReadLine());
+                Console.WriteLine("Ingrese el nombre");
+                nombre = Console.ReadLine();
+                Console.WriteLine("Antiguedad");
+                antiguedad = int.Parse(Console.ReadLine());
+                Console.WriteLine("Horas trabajadas");
+                cantidadDeHorasTrabajadas = int.Parse(Console.ReadLine());
 
-            bruto = CalculoSalarioBruto(cantidadDeHorasTrabajadas, valorHora, antiguedad);
-            neto = bruto * 0.87;
+                bruto = CalculoSalarioBruto(cantidadDeHorasTrabajadas, valorHora, antiguedad);
+                neto = bruto * 0.87;
 
-            StringBuilder sb = new StringBuilder();
-            sb.AppendLine("\n\n***************************************************************");
-            sb.AppendLine("***********************Recibo de sueldo************************");
-            sb.AppendLine("Nombre: "+nombre);
-            sb.AppendLine("Antiguedad: " + antiguedad);
-            sb.AppendLine("Valor hora: " + valorHora);
-            sb.AppendLine("Cantidad de horas: " + cantidadDeHorasTrabajadas);
-            sb.AppendLine("Importe bruto: " + bruto);
-            sb.AppendLine("Importe neto: " + neto);
-            sb.AppendLine("***************************************************************");
+                StringBuilder sb = new StringBuilder();
+                sb.AppendLine("\n\n***************************************************************");
+                sb.AppendLine("***********************Recibo de sueldo************************");
+                sb.AppendLine("Nombre: " + nombre);
+                sb.AppendLine("Antiguedad: " + antiguedad);
+                sb.AppendLine("Valor hora: " + valorHora);
+                sb.AppendLine("Cantidad de horas: " + cantidadDeHorasTrabajadas);
+                sb.AppendLine("Importe bruto: " + bruto);
+                sb.AppendLine("Importe neto: " + neto);
+                sb.AppendLine("***************************************************************");
 
-            Console.WriteLine(sb.ToString());
+                Console.WriteLine(sb.ToString());
+
+                Console.WriteLine("\n\nDesea continuar? s-n");
+                continuar = char.Parse(Console.ReadLine());
+            }
+
+
 
             Console.Beep();
             Console.ReadKey();
