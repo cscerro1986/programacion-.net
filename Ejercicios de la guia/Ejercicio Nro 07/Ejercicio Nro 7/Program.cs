@@ -18,8 +18,6 @@ namespace Ejercicio_Nro_7
 {
     class Program
     {
-        
-
         static void Main(string[] args)
         {
             Console.Title = "Ejercicio Nro 7";
@@ -27,10 +25,9 @@ namespace Ejercicio_Nro_7
             
             Console.WriteLine("Ingrese su fecha de nacimiento (DDMMAAAA)");
             fechaString = Console.ReadLine();
-
+            
             DateTime fechaDeNacimiento = DeStringADateTime(fechaString);
             DateTime fechaActual = DateTime.Now;
-
 
             Console.WriteLine(CalcularDiasTranscurridos(fechaDeNacimiento,fechaActual));
 
@@ -116,7 +113,11 @@ namespace Ejercicio_Nro_7
         }
 
 
-
+        /// <summary>
+        /// Se ingresa una fecha y te retorna la cantidad de dias que transcurrieron del año.
+        /// </summary>
+        /// <param name="fecha"></param>
+        /// <returns></returns>
         public static int DiasTranscurridosDelAñio(DateTime fecha)
         {
             int anio = fecha.Year;
