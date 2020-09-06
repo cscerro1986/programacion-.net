@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using Ejercicio_Nro_22;
+
 namespace Ejercicio_Nro_25
 {
     static class Program
