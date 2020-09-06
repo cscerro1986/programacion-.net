@@ -63,18 +63,16 @@ namespace Ejercicio_Nro_21
         
         public static explicit operator Kelvin( Celsius c)
         {
-            Kelvin k = new Kelvin(DeCelciusAFarenheit(c.GetTemperatura()));
+            Kelvin k = new Kelvin(DeCelciusAKelvin(c.GetTemperatura()));
 
             return k;
         }
+
 
         public static explicit operator Fahrenheit( Celsius c)
         {
             return new Fahrenheit(DeCelciusAFarenheit(c.GetTemperatura()));
         }
-
-
-
 
 
     }

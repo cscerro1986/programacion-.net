@@ -17,6 +17,7 @@ namespace Ejercicio_Nro_16_Consola
             Alumno nuevoAlumno2 = new Alumno("Cisneros", 1231,"Pedro");
             Alumno nuevoAlumno3 = new Alumno("Valle", 1231,"Juana");
 
+            
             nuevoAlumno.Estudiar(1, 5);
             nuevoAlumno2.Estudiar(6, 8);
             nuevoAlumno3.Estudiar(9, 10);
@@ -30,6 +31,8 @@ namespace Ejercicio_Nro_16_Consola
             Console.WriteLine(  nuevoAlumno3.Mostrar());
 
             Console.ReadKey();
+
+            
         }
     }
 }

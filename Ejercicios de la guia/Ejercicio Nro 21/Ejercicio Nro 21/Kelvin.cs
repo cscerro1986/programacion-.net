@@ -30,7 +30,7 @@ namespace Ejercicio_Nro_21
 
         private static double DeKelvinAFarenhaiet(double k)
         {
-            return ((k-273.15)*(9/5))+32;
+            return ((k-273.15)*9/5)+32;
         }
 
         public static explicit operator Celsius (Kelvin k)
@@ -40,7 +40,7 @@ namespace Ejercicio_Nro_21
 
         public static explicit operator Fahrenheit(Kelvin k)
         {
-            return new Fahrenheit(DeKelvinACelcius(k.GetTemperatura()));
+            return new Fahrenheit(DeKelvinAFarenhaiet(k.GetTemperatura()));
         }
 
 

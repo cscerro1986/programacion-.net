@@ -16,6 +16,9 @@ namespace Ejercicio_Nro_16
         private int legajo;
         private string nombre;
 
+        private static Random rm;
+        
+
         public Alumno(string apellido, int legajo, string nombre)
         {
             this.apellido = apellido;
@@ -23,11 +26,16 @@ namespace Ejercicio_Nro_16
             this.nombre = nombre;
         }
 
+        static Alumno()
+        {
+            rm = new Random();
+        }
+
+
         public void CalcularFinal()
         {
             if(this.nota1>=4&&this.nota2>=4)
             {
-                Random rm = new Random();
                 this.notaFinal = rm.Next(1, 10);
             }
             else
