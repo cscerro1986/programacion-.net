@@ -172,7 +172,7 @@ namespace Ejercicio_Nro_37
 
 
 
-        public string Mostrar()
+        private string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("\n\n**************************************");
@@ -185,17 +185,8 @@ namespace Ejercicio_Nro_37
             sb.AppendLine("\n**********LISTADO DE LLAMADAS********************");
             foreach (Llamada item in this.Llamadas)
             {
-                sb.AppendLine("\n");
-                if(item is Local)
-                {
-                    sb.AppendLine(((Local)item).Mostrar());
-                }
-
-                if (item is Provincial)
-                {
-                    sb.AppendLine(((Provincial)item).Mostrar());
-                }
-
+                //POLIMORFISMO
+                sb.AppendLine("\n"+item.ToString());
 
             }
            
@@ -209,6 +200,23 @@ namespace Ejercicio_Nro_37
             this.listaLlamadas.Sort(Llamada.OrdenarLlamadaPorDuracion);
         }
 
-        
+        public static Centralita operator + (Centralita c, Llamada nuevaLlamada )
+        {
+            foreach (Llamada item in c.Llamadas)
+            {
+                if(item==nuevaLlamada)
+                    return c;
+            }
+
+            c.Llamadas.Add(nuevaLlamada);
+            return c;
+        }
+
+        public override string ToString()
+        {
+            return this.Mostrar();
+        }
+
+
     }
 }

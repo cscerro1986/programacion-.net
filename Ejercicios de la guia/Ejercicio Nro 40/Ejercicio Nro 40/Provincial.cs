@@ -28,7 +28,7 @@ namespace Ejercicio_Nro_37
 
         #endregion CONSTRUCTORES
 
-        public float CostoLlamada 
+        public override float CostoLlamada 
         {
             get
             {
@@ -37,7 +37,7 @@ namespace Ejercicio_Nro_37
         }
 
 
-        protected string Mostrar()
+        protected override string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
             sb.Append(base.Mostrar());
@@ -47,6 +47,12 @@ namespace Ejercicio_Nro_37
             return sb.ToString();
 
         }
+
+        public override string ToString()
+        {
+            return this.Mostrar();
+        }
+
 
         private float CalcularCosto()
         {
@@ -68,6 +74,14 @@ namespace Ejercicio_Nro_37
             }
 
             return retorno;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is Provincial)
+                return true;
+
+            return false;
         }
     }
 }

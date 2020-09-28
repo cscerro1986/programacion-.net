@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Ejercicio_Nro_37
 {
-    public class Llamada
+    public abstract class Llamada
     {
-
         public enum TipoLlamada { Local, Provincial, Todas}
 
         protected float duracion;
@@ -22,7 +21,13 @@ namespace Ejercicio_Nro_37
             this.nroOrigen = nroOrigen;
         }
 
-        public float Duracion 
+        public abstract float CostoLlamada 
+        {
+            get;
+        }
+
+
+        public float Duracion
         {
             get
             {
@@ -30,7 +35,7 @@ namespace Ejercicio_Nro_37
             }
         }
 
-        public string NroDestino 
+        public string NroDestino
         {
             get
             {
@@ -47,9 +52,10 @@ namespace Ejercicio_Nro_37
         }
 
 
+
         #region Metodos
 
-        public string Mostrar()
+        protected virtual string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("Duracion: " + this.Duracion);
@@ -82,6 +88,30 @@ namespace Ejercicio_Nro_37
 
         }
         #endregion Metodos
+
+        #region operadores
+
+        public static bool operator ==(Llamada llamda1, Llamada llamada2)
+        {
+            if (llamda1.Equals(llamda1))
+            {
+                if(llamda1.NroDestino==llamada2.NroDestino&&llamada2.NroOringe==llamda1.NroOringe)
+                    return true;
+            }
+                
+
+            return false;
+
+
+        }
+
+        public static bool operator !=(Llamada llamda1, Llamada llamada2)
+        {
+            return !(llamda1 == llamada2);
+        }
+
+
+        #endregion operadores
 
 
     }
